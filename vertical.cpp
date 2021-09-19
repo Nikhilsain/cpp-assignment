@@ -4,16 +4,17 @@ void solve(int a[],int n)
 {
  vector <vector<int>> vec(n);
  int i,j;
- int left_child=0,right_child=0;
+ int left_child=1,right_child=2;
  for(i=0;i<n;i++)
  {
   if(a[i]!=-1){   
-  left_child = 2*i+1;
-  right_child = 2*i+2;
+
   if(left_child<n )
   vec[i].push_back(left_child);
   if(right_child<n)
   vec[i].push_back(right_child);
+    left_child = right_child+1;
+    right_child+=2;
   }
  }
  
@@ -56,7 +57,7 @@ void solve(int a[],int n)
 
 int main()
 {
-    int a[]={3,9,20,-1,-1,15,7};//
+    int a[]={1,2,5,3,4,-1,6,-1,-1,-1,9,-1,7,-1,-1,8,7,-1,-1,8,-1,9,-1};//
  
-    solve(a,7);
+    solve(a,23);
 }
